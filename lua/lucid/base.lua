@@ -70,7 +70,7 @@ local theme = lush(function()
     NonText      { fg = c.magenta }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     Normal       { fg = c.white, bg = c.deep_blue }, -- normal text
     NormalFloat  { fg = c.white, bg = c.dark_grey }, -- Normal text in floating windows.
-    -- NormalNC     { }, -- normal text in non-current windows
+    NormalNC     { fg = c.white, bg = c.deep_blue }, -- normal text in non-current windows
 
     -- Maybe restyle popup menus
     Pmenu        { fg = c.white, bg = c.dark_grey }, -- Popup menu: normal item.
@@ -87,9 +87,8 @@ local theme = lush(function()
     SpellLocal   { fg = c.yellow }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
     SpellRare    { fg = c.yellow }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
 
-    -- Handled by feline.lua?
-    -- StatusLine   { }, -- status line of current window
-    -- StatusLineNC { }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+    StatusLine   { fg = c.deep_blue2, bg = c.deep_blue2 }, -- status line of current window
+    StatusLineNC { fg = c.deep_blue2, bg = c.deep_blue2 }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 
     -- Revisit this when we use tabs
     -- TabLine      { }, -- tab pages line, not active tab page label
@@ -168,8 +167,8 @@ local theme = lush(function()
 
     LspDiagnosticsDefaultError           { fg = c.red }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
     LspDiagnosticsDefaultWarning         { fg = c.yellow }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    LspDiagnosticsDefaultInformation     { fg = c.white }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
-    LspDiagnosticsDefaultHint            { fg = c.white }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    LspDiagnosticsDefaultInformation     { fg = c.cyan }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    LspDiagnosticsDefaultHint            { fg = c.cyan }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
     -- LspDiagnosticsVirtualTextError       { fg = c.red }, -- Used for "Error" diagnostic virtual text
     -- LspDiagnosticsVirtualTextWarning     { fg = c.bright_yellow }, -- Used for "Warning" diagnostic virtual text
@@ -178,8 +177,8 @@ local theme = lush(function()
 
     LspDiagnosticsUnderlineError         { gui = 'undercurl', sp = c.red }, -- Used to underline "Error" diagnostics
     LspDiagnosticsUnderlineWarning       { gui = 'undercurl', sp = c.yellow }, -- Used to underline "Warning" diagnostics
-    LspDiagnosticsUnderlineInformation   { gui = 'undercurl', sp = c.white }, -- Used to underline "Information" diagnostics
-    LspDiagnosticsUnderlineHint          { gui = 'undercurl', sp = c.white }, -- Used to underline "Hint" diagnostics
+    LspDiagnosticsUnderlineInformation   { gui = 'undercurl', sp = c.cyan }, -- Used to underline "Information" diagnostics
+    LspDiagnosticsUnderlineHint          { gui = 'undercurl', sp = c.cyan }, -- Used to underline "Hint" diagnostics
 
     -- LspDiagnosticsFloatingError          { fg = c.red }, -- Used to color "Error" diagnostic messages in diagnostics float
     -- LspDiagnosticsFloatingWarning        { fg = c.bright_yellow }, -- Used to color "Warning" diagnostic messages in diagnostics float
@@ -249,13 +248,6 @@ local theme = lush(function()
     -- TSLiteral            { };    -- Literal text.
     -- TSURI                { };    -- Any URI like a link or email.
 
-    -- Plugins
-
-    GitSignsAdd             { fg = c.dark_green },
-    GitSignsChange          { fg = c.gold },
-    GitSignsDelete          { fg = c.dark_red },
-
-
     -- Misc language specific syntax.
     javaScriptIdentifier { Statement },
   }
@@ -264,5 +256,3 @@ end)
 -- return our parsed theme for extension or use else where.
 return theme
 --- vi:nowrap
-
-
