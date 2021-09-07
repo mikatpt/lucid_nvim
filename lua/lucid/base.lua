@@ -88,7 +88,7 @@ local theme = lush(function()
     SpellRare    { SpellBad }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
 
     StatusLine   { fg = c.deep_blue2, bg = c.deep_blue2 }, -- status line of current window
-    StatusLineNC { StatusLine }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+    StatusLineNC { fg = c.deep_blue2, bg = c.deep_blue2 }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 
     -- Revisit this when we use tabs
     TabLine      { fg = c.black, bg = c.light_grey }, -- tab pages line, not active tab page label
