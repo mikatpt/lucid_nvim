@@ -28,6 +28,7 @@ local c = {
     light_blue = hsl(212, 46, 67),
     cyan = hsl(178, 100, 82),
     cyan2 = hsl(211, 35, 63),
+    cyan3 = hsl('#00FFFF'),
 }
 
 return c
