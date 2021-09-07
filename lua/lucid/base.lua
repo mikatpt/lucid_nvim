@@ -165,12 +165,12 @@ local theme = lush(function()
     LspReferenceRead                     { fg = c.black, bg = c.magenta }, -- used for highlighting "read" references
     LspReferenceWrite                    { fg = c.black, bg = c.magenta }, -- used for highlighting "write" references
 
-    LspDiagnosticsDefaultError           { fg = c.red }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    LspDiagnosticsDefaultError           { Error }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
     LspDiagnosticsDefaultWarning         { fg = c.yellow }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
     LspDiagnosticsDefaultInformation     { fg = c.cyan }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
     LspDiagnosticsDefaultHint            { fg = c.cyan }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
 
-    LspDiagnosticsVirtualTextError       { fg = c.red }, -- Used for "Error" diagnostic virtual text
+    LspDiagnosticsVirtualTextError       { Error }, -- Used for "Error" diagnostic virtual text
     LspDiagnosticsVirtualTextWarning     { fg = c.yellow }, -- Used for "Warning" diagnostic virtual text
     LspDiagnosticsVirtualTextInformation { fg = c.cyan }, -- Used for "Information" diagnostic virtual text
     LspDiagnosticsVirtualTextHint        { fg = c.cyan }, -- Used for "Hint" diagnostic virtual text
@@ -180,12 +180,12 @@ local theme = lush(function()
     LspDiagnosticsUnderlineInformation   { gui = 'undercurl', sp = c.cyan }, -- Used to underline "Information" diagnostics
     LspDiagnosticsUnderlineHint          { gui = 'undercurl', sp = c.cyan }, -- Used to underline "Hint" diagnostics
 
-    LspDiagnosticsFloatingError          { fg = c.red }, -- Used to color "Error" diagnostic messages in diagnostics float
+    LspDiagnosticsFloatingError          { Error }, -- Used to color "Error" diagnostic messages in diagnostics float
     LspDiagnosticsFloatingWarning        { fg = c.yellow }, -- Used to color "Warning" diagnostic messages in diagnostics float
     LspDiagnosticsFloatingInformation    { fg = c.cyan }, -- Used to color "Information" diagnostic messages in diagnostics float
     LspDiagnosticsFloatingHint           { fg = c.cyan }, -- Used to color "Hint" diagnostic messages in diagnostics float
 
-    LspDiagnosticsSignError              { fg = c.red }, -- Used for "Error" signs in sign column
+    LspDiagnosticsSignError              { Error }, -- Used for "Error" signs in sign column
     LspDiagnosticsSignWarning            { fg = c.yellow }, -- Used for "Warning" signs in sign column
     LspDiagnosticsSignInformation        { fg = c.cyan }, -- Used for "Information" signs in sign column
     LspDiagnosticsSignHint               { fg = c.cyan }, -- Used for "Hint" signs in sign column
@@ -206,7 +206,7 @@ local theme = lush(function()
     TSConstant           { fg = c.dark_blue };    -- For constants
     TSConstBuiltin       { Special };    -- For constant that are built in the language: `nil` in Lua.
     TSConstMacro         { Special };    -- For constants that are defined by macros: `NULL` in C.
-    TSError              { fg = c.red };    -- For syntax/parser errors.
+    TSError              { Error };    -- For syntax/parser errors.
     TSException          { Exception };    -- For exception related keywords.
     TSField              { fg = c.cyan};    -- For fields.
     TSFloat              { Float };    -- For floats.
