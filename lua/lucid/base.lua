@@ -98,7 +98,7 @@ local theme = lush(function()
     Visual       { fg = c.black, bg = c.olive}, -- Visual mode selection
     VisualNOS    { fg = c.yellow, bg = c.magenta}, -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg   { fg = c.red, gui = 'bold' }, -- warning messages
-    Whitespace   { fg = c.magenta }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
+    Whitespace   { fg = c.grey }, -- "nbsp", "space", "tab" and "trail" in 'listchars'
     WildMenu     { fg = c.black, bg = c.yellow }, -- current match in 'wildmenu' completion
 
     ----- [[ ------- ]] -----
