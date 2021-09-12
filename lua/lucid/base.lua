@@ -52,7 +52,7 @@ local theme = lush(function()
     TermCursor   { bg = c.grey }, -- cursor in a focused terminal
     TermCursorNC { bg = c.grey }, -- cursor in an unfocused terminal
     ErrorMsg     { fg = c.red },
-    VertSplit    { fg = c.deep_blue2, bg = c.deep_blue2 }, -- the column separating vertically split windows
+    VertSplit    { fg = c.deep_blue3, bg = c.deep_blue }, -- the column separating vertically split windows
     Folded       { fg = c.cyan, bg = c.deep_blue }, -- line used for closed folds
     FoldColumn   { bg = c.deep_blue}, -- 'foldcolumn'
     SignColumn   { FoldColumn }, -- column where |signs| are displayed
@@ -87,8 +87,8 @@ local theme = lush(function()
     SpellLocal   { SpellBad }, -- Word that is recognized by the spellchecker as one that is used in another region. |spell| Combined with the highlighting used otherwise.
     SpellRare    { SpellBad }, -- Word that is recognized by the spellchecker as one that is hardly ever used.  |spell| Combined with the highlighting used otherwise.
 
-    StatusLine   { fg = c.deep_blue2, bg = c.deep_blue2 }, -- status line of current window
-    StatusLineNC { fg = c.deep_blue2, bg = c.deep_blue2 }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
+    StatusLine   { fg = lush.hsl('#12131A'), bg = lush.hsl('#12131A') }, -- status line of current window
+    StatusLineNC { fg = lush.hsl('#12131A'), bg = lush.hsl('#12131A') }, -- status lines of not-current windows Note: if this is equal to "StatusLine" Vim will use "^^^" in the status line of the current window.
 
     -- Revisit this when we use tabs
     TabLine      { fg = c.black, bg = c.light_grey }, -- tab pages line, not active tab page label

@@ -23,6 +23,7 @@ local c = {
     ivory = hsl(47, 96, 81),
     deep_blue = hsl(210, 100, 4),
     deep_blue2 = hsl(206, 100, 8),
+    deep_blue3 = hsl(210, 100, 13),
     dark_blue = hsl(210, 95, 38),
     blue = hsl(212, 67, 51),
     light_blue = hsl(212, 46, 67),
