@@ -212,7 +212,7 @@ local theme = lush(function()
     TSFloat              { Float };    -- For floats.
     TSFunction           { Function };    -- For function (calls and definitions).
     TSFuncBuiltin        { fg = c.purple };    -- For builtin functions: `table.insert` in Lua.
-    TSFuncMacro          { fg = c.ivory };    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
+    TSFuncMacro          { Special };    -- For macro defined fuctions (calls and definitions): each `macro_rules` in Rust.
     TSInclude            { Include };    -- For includes: `#include` in C, `use` or `extern crate` in Rust, or `require` in Lua.
     TSKeyword            { Statement };    -- For keywords that don't fall in previous categories.
     TSKeywordFunction    { Statement };    -- For keywords used to define a fuction.
