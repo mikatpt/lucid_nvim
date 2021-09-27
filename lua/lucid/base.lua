@@ -41,8 +41,8 @@ local theme = lush(function()
     Cursor       { fg = c.black, bg = c.jade }, -- character under the cursor
     lCursor      { Cursor }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
     CursorIM     { Cursor }, -- like Cursor, but used when in IME mode |CursorIM|
-    CursorColumn { bg = c.grey }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
-    CursorLine   { CursorColumn }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
+    CursorColumn { bg = c.deep_blue2 }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
+    CursorLine   { bg = c.deep_blue2 }, -- Screen-line at the cursor, when 'cursorline' is set.  Low-priority if foreground (ctermfg OR guifg) is not set.
     Directory    { fg = c.olive, bg = c.deep_blue }, -- directory names (and other special names in listings)
     DiffAdd      { fg = c.dark_green },
     DiffChange   { fg = c.gold },
@@ -69,12 +69,13 @@ local theme = lush(function()
     MoreMsg      { fg = c.jade }, -- |more-prompt|
     NonText      { fg = c.magenta }, -- '@' at the end of the window, characters from 'showbreak' and other characters that do not really exist in the text (e.g., ">" displayed when a double-wide character doesn't fit at the end of the line). See also |hl-EndOfBuffer|.
     Normal       { fg = c.white, bg = c.deep_blue }, -- normal text
-    NormalFloat  { fg = c.white, bg = c.dark_grey }, -- Normal text in floating windows.
+    NormalFloat  { fg = c.white, bg = c.deep_blue }, -- Normal text in floating windows.
     NormalNC     { fg = c.white, bg = c.deep_blue }, -- normal text in non-current windows
+    FloatBorder  { fg = c.cyan2 },
 
     -- Maybe restyle popup menus
     Pmenu        { fg = c.white, bg = c.dark_grey }, -- Popup menu: normal item.
-    PmenuSel     { fg = c.black, bg = c.jade }, -- Popup menu: selected item.
+    PmenuSel     { fg = c.white, bg = c.deep_blue2 }, -- Popup menu: selected item.
     PmenuSbar    { bg = c.dark_grey }, -- Popup menu: scrollbar.
     PmenuThumb   { bg = c.grey }, -- Popup menu: Thumb of the scrollbar.
 
