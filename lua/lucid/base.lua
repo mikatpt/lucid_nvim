@@ -75,7 +75,7 @@ local theme = lush(function()
 
     -- Maybe restyle popup menus
     Pmenu        { fg = c.white, bg = c.dark_grey }, -- Popup menu: normal item.
-    PmenuSel     { fg = c.white, bg = c.deep_blue2 }, -- Popup menu: selected item.
+    PmenuSel     { fg = c.white, bg = c.deep_blue3 }, -- Popup menu: selected item.
     PmenuSbar    { bg = c.dark_grey }, -- Popup menu: scrollbar.
     PmenuThumb   { bg = c.grey }, -- Popup menu: Thumb of the scrollbar.
 
