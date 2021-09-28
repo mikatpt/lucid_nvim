@@ -12,6 +12,7 @@ local c = {
     dark_grey = hsl(210, 44, 7),
     grey = hsl(0, 0, 22),
     light_grey = hsl(261, 8, 51),
+    light_grey2 = hsl(261, 8, 61),
     dark_green = hsl(120, 100, 18),
     dark_green2 = hsl(120, 100, 28),
     green = hsl(120, 100, 43),
