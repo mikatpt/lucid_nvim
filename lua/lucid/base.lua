@@ -167,6 +167,32 @@ local theme = lush(function()
     LspReferenceRead                     { fg = c.black, bg = c.magenta }, -- used for highlighting "read" references
     LspReferenceWrite                    { fg = c.black, bg = c.magenta }, -- used for highlighting "write" references
 
+    DiagnosticError                      { Error }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    DiagnosticWarn                       { fg = c.yellow }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    DiagnosticInfo                       { fg = c.cyan }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+    DiagnosticHint                       { fg = c.cyan }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
+
+    DiagnosticVirtualTextError           { Error }, -- Used for "Error" diagnostic virtual text
+    DiagnosticVirtualTextWarn            { fg = c.yellow }, -- Used for "Warning" diagnostic virtual text
+    DiagnosticVirtualTextInfo            { fg = c.cyan }, -- Used for "Info" diagnostic virtual text
+    DiagnosticVirtualTextHint            { fg = c.cyan }, -- Used for "Hint" diagnostic virtual text
+
+    DiagnosticUnderlineError             { gui = 'undercurl', sp = c.red }, -- Used to underline "Error" diagnostics
+    DiagnosticUnderlineWarn              { gui = 'undercurl', sp = c.yellow }, -- Used to underline "Warning" diagnostics
+    DiagnosticUnderlineInfo              { gui = 'undercurl', sp = c.cyan }, -- Used to underline "Info" diagnostics
+    DiagnosticUnderlineHint              { gui = 'undercurl', sp = c.cyan }, -- Used to underline "Hint" diagnostics
+
+    DiagnosticFloatingError              { Error }, -- Used to color "Error" diagnostic messages in diagnostics float
+    DiagnosticFloatingWarn               { fg = c.yellow }, -- Used to color "Warning" diagnostic messages in diagnostics float
+    DiagnosticFloatingInfo               { fg = c.cyan }, -- Used to color "Info" diagnostic messages in diagnostics float
+    DiagnosticFloatingHint               { fg = c.cyan }, -- Used to color "Hint" diagnostic messages in diagnostics float
+
+    DiagnosticSignError                  { Error }, -- Used for "Error" signs in sign column
+    DiagnosticSignWarn                   { fg = c.yellow }, -- Used for "Warning" signs in sign column
+    DiagnosticSignInfo                   { fg = c.cyan }, -- Used for "Info" signs in sign column
+    DiagnosticSignHint                   { fg = c.cyan }, -- Used for "Hint" signs in sign column
+
+    -- TODO: Deprecate!
     LspDiagnosticsDefaultError           { Error }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
     LspDiagnosticsDefaultWarning         { fg = c.yellow }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
     LspDiagnosticsDefaultInformation     { fg = c.cyan }, -- Used as the base highlight group. Other LspDiagnostic highlights link to this by default (except Underline)
