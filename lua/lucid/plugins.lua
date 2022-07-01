@@ -1,3 +1,4 @@
+-- stylua: ignore start
 local lush = require'lush'
 local c = require'lucid.colors'
 
@@ -30,6 +31,7 @@ M = lush(function()
     GitSignsChange           { base.DiffChange },
     GitSignsDelete           { base.DiffDelete },
 
+    LspSignatureActiveParameter     { base.Visual },
     LspSagaDiagnosticBorder         { fg = c.dark_purple },
     LspSagaDiagnosticHeader         { fg = c.dark_purple },
     LspSagaDiagnosticTruncateLine   { fg = c.dark_purple },
@@ -71,7 +73,7 @@ M = lush(function()
     fugitiveStop                { diffRemoved },
     fugitiveDone                { diffAdded },
     fugitiveHash                { fg = c.magenta },
-    fugitiveInstruction {fg = c.red},
+    fugitiveInstruction         { fg = c.red },
     fugitiveHunk                { fg = c.white },
 
     gitcommitSummary            { fg = c.jade },

@@ -39,7 +39,7 @@ local theme = lush(function()
     Comment      { fg = c.light_grey },
     ColorColumn  { fg = c.magenta }, -- used for the columns set with 'colorcolumn'
     Conceal      { fg = c.ivory, gui = "bold" }, -- placeholder characters substituted for concealed text (see 'conceallevel')
-    Cursor       { fg = c.black, bg = c.jade }, -- character under the cursor
+    Cursor       { fg = c.white, bg = c.grey }, -- character under the cursor
     lCursor      { Cursor }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
     CursorIM     { Cursor }, -- like Cursor, but used when in IME mode |CursorIM|
     CursorColumn { bg = c.deep_blue2 }, -- Screen-column at the cursor, when 'cursorcolumn' is set.
