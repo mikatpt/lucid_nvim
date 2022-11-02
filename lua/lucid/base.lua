@@ -38,7 +38,7 @@ local theme = lush(function()
 
     Comment      { fg = c.light_grey },
     ColorColumn  { fg = c.magenta }, -- used for the columns set with 'colorcolumn'
-    Conceal      { fg = c.ivory, gui = "bold" }, -- placeholder characters substituted for concealed text (see 'conceallevel')
+    Conceal      { fg = c.ivory }, -- placeholder characters substituted for concealed text (see 'conceallevel')
     Cursor       { fg = c.white, bg = c.grey }, -- character under the cursor
     lCursor      { Cursor }, -- the character under the cursor when |language-mapping| is used (see 'guicursor')
     CursorIM     { Cursor }, -- like Cursor, but used when in IME mode |CursorIM|
@@ -53,7 +53,7 @@ local theme = lush(function()
     TermCursor   { bg = c.grey }, -- cursor in a focused terminal
     TermCursorNC { bg = c.grey }, -- cursor in an unfocused terminal
     ErrorMsg     { fg = c.red, gui = 'bold' },
-    VertSplit    { fg = c.deep_blue3, bg = c.deep_blue }, -- the column separating vertically split windows
+    VertSplit    { fg = c.light_blue2, bg = c.deep_blue }, -- the column separating vertically split windows
     Folded       { fg = c.cyan, bg = c.deep_blue }, -- line used for closed folds
     FoldColumn   { bg = c.deep_blue}, -- 'foldcolumn'
     SignColumn   { FoldColumn }, -- column where |signs| are displayed
@@ -76,7 +76,7 @@ local theme = lush(function()
 
     -- Maybe restyle popup menus
     Pmenu        { fg = c.white, bg = c.dark_grey }, -- Popup menu: normal item.
-    PmenuSel     { fg = c.white, bg = c.deep_blue3 }, -- Popup menu: selected item.
+    PmenuSel     { bg = c.deep_blue3 }, -- Popup menu: selected item.
     PmenuSbar    { bg = c.dark_grey }, -- Popup menu: scrollbar.
     PmenuThumb   { bg = c.grey }, -- Popup menu: Thumb of the scrollbar.
 
@@ -139,7 +139,7 @@ local theme = lush(function()
     Type           { fg = c.jade }, -- (preferred) int, long, char, etc.
     StorageClass   { Type }, -- static, register, volatile, etc.
     Structure      { Type }, --  struct, union, enum, etc.
-    Typedef        { Type }, --  A typedef
+    Typedef        { fg = c.ivory }, --  A typedef
 
     Special        { fg = c.magenta }, -- (preferred) any special symbol
     SpecialChar    { Special }, --  special character in a constant
