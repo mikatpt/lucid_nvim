@@ -387,20 +387,10 @@ local extensions = lush(function()
 
     FzfTabline                 { fg = c.black, bg = c.light_grey },
 
-    LspSagaDiagnosticBorder         { fg = c.dark_purple },
-    LspSagaDiagnosticHeader         { fg = c.dark_purple },
-    LspSagaDiagnosticTruncateLine   { fg = c.dark_purple },
-    LspSagaShTruncateLine           { fg = c.cyan2 },
-    LspSagaSignatureHelpBorder      { fg = c.cyan2 },
-    LspSagaHoverBorder              { fg = c.cyan2 },
-    LspSagaDocTruncateLine          { fg = c.cyan2 },
-    LspSagaCodeActionTitle          { fg = c.light_blue },
-    LspSagaCodeActionBorder         { fg = c.cyan2 },
-    LspSagaCodeActionTruncateLine   { fg = c.cyan2 },
-    LspSagaCodeActionContent        { fg = c.olive},
-    LspSagaRenameBorder             { fg = c.cyan2},
-    LspSagaDefPreviewBorder         { fg = c.dark_purple},
-    LspLinesDiagBorder              { fg = c.dark_purple },
+    SagaBorder                 { fg = c.light_purple },
+    TitleString                { fg = c.light_purple, gui = 'bold' },
+    TitleSymbol                { fg = c.light_purple },
+    CodeActionText             { fg = c.light_purple },
   }
 end)
 
