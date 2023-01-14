@@ -232,7 +232,7 @@ local base = lush(function(injected_functions)
     sym('@property')     { sym('@field') }, -- similar to `@field`
     sym('@conceal')      { Conceal },       -- for captures that are only used for concealing
     sym('@scope')        { Special },       -- scope block
-    sym('@reference')    { Identifier },    -- identifier reference
+    -- sym('@reference')    { Identifier },    -- identifier reference
 
     sym('@variable')          { Identifier },     -- various variable names
     sym('@variable.builtin')  { Special },        -- built-in variable names (e.g. `this`)
