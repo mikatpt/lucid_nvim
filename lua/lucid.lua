@@ -391,6 +391,8 @@ local extensions = lush(function()
     TitleString                { fg = c.light_purple, gui = 'bold' },
     TitleSymbol                { fg = c.light_purple },
     CodeActionText             { fg = c.light_purple },
+    FidgetTitle                { fg = c.olive  },
+    FidgetTask                 { fg = c.dark_green2  },
   }
 end)
 
