@@ -393,6 +393,7 @@ local extensions = lush(function()
     CodeActionText             { fg = c.light_purple },
     FidgetTitle                { fg = c.olive  },
     FidgetTask                 { fg = c.dark_green2  },
+    TelescopeResultsNumber     { fg = c.olive, bg = c.deep_blue2 },
   }
 end)
 
