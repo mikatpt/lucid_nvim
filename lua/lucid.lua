@@ -269,12 +269,12 @@ local base = lush(function(injected_functions)
     sym('@keyword')           { Keyword },       -- various keywords
     sym('@keyword.function')  { Keyword },       -- keywords that define a function (e.g. `func` in Go, `def` in Python)
     sym('@keyword.operator')  { Operator },      -- operators that are English words (e.g. `and` / `or`)
+    sym('@keyword.modifier')  { Type },          -- type qualifiers (e.g. `const`)
     sym('@keyword.return')    { Keyword },       -- keywords like `return` and `yield`
 
     sym('@type')              { Type },             -- type or class definitions and annotations
     sym('@type.builtin')      { Type },             -- built-in types
     sym('@type.definition')   { Typedef },          -- type definitions (e.g. `typedef` in C)
-    sym('@type.qualifier')    { Type },             -- type qualifiers (e.g. `const`)
     sym('@storageclass')          { StorageClass }, -- visibility/life-time modifiers
     sym('@storageclass.lifetime') { StorageClass }, -- life-time modifiers (e.g. `static`)
 
