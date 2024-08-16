@@ -112,7 +112,7 @@ local base = lush(function(injected_functions)
     VisualNOS    { fg = c.yellow, bg = c.magenta},     -- Visual mode selection when vim is "Not Owning the Selection".
     WarningMsg   { fg = c.yellow, gui = 'bold' },      -- warning messages
     Whitespace   { fg = c.grey },                      -- "nbsp", "space", "tab" and "trail" in 'listchars'
-    Winseperator { VertSplit },                        -- Seperator between window splits. Inherits from |hl-VertSplit| by default, which it will replace eventually.
+    WinSeparator { VertSplit },                        -- Seperator between window splits. Inherits from |hl-VertSplit| by default, which it will replace eventually.
     WildMenu     { fg = c.black, bg = c.yellow },      -- current match in 'wildmenu' completion
 
     -- Syntax
