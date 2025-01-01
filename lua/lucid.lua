@@ -87,7 +87,7 @@ local base = lush(function(injected_functions)
     FloatBorder  { fg = c.cyan2 },
 
     Pmenu        { fg = c.white, bg = c.dark_grey }, -- Popup menu: normal item.
-    PmenuSel     { bg = c.deep_blue3 },              -- Popup menu: selected item.
+    PmenuSel     { bg = c.light_blue2 },              -- Popup menu: selected item.
     PmenuSbar    { bg = c.dark_grey },               -- Popup menu: scrollbar.
     PmenuThumb   { bg = c.grey },                    -- Popup menu: Thumb of the scrollbar.
 
@@ -339,6 +339,7 @@ local extensions = lush(function()
     NvimTreeGitNew             { fg = c.dark_green2 },
     NvimTreeGitDeleted         { base.DiffDelete },
     NvimTreeSpecialFile        { base.Special },
+    NvimTreeWindowPicker       { fg = c.light_purple, bg = c.deep_blue2 },
 
     dashboardHeader            { fg = c.light_blue },
     dashboardFooter            { fg = c.dark_green },
