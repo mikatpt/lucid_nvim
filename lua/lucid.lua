@@ -339,7 +339,7 @@ local extensions = lush(function()
     NvimTreeGitNew             { fg = c.dark_green2 },
     NvimTreeGitDeleted         { base.DiffDelete },
     NvimTreeSpecialFile        { base.Special },
-    NvimTreeWindowPicker       { fg = c.light_purple, bg = c.deep_blue2 },
+    NvimTreeWindowPicker       { fg = c.ivory, bg = c.dark_blue },
 
     dashboardHeader            { fg = c.light_blue },
     dashboardFooter            { fg = c.dark_green },
