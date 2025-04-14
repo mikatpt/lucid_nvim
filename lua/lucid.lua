@@ -195,6 +195,7 @@ local base = lush(function(injected_functions)
 
     -- TreeSitter
 
+    Field                          { fg = c.cyan },        -- object and struct fields
     sym('@text')                   { Normal },        -- non-structured text
     sym('@text.literal')           { Character },     -- literal or verbatim text
     sym('@text.reference')         { Comment },       -- text references, footnotes, citations, etc.
@@ -350,12 +351,12 @@ local extensions = lush(function()
     CmpItemAbbrMatch           { base.Special },
     CmpItemAbbrMatchFuzzy      { CmpItemAbbrMatch },
     CmpItemKindText            { base.Comment },
-    CmpItemKindVariable        { base.TSField },
-    CmpItemKindField           { base.TSField },
-    CmpItemKindProperty        { base.TSField },
+    CmpItemKindVariable        { base.Character },
+    CmpItemKindField           { base.Character },
+    CmpItemKindProperty        { base.Character },
     CmpItemKindFunction        { base.Function },
     CmpItemKindMethod          { base.Function },
-    CmpItemKindConstructor     { base.TSConstBuiltin },
+    CmpItemKindConstructor     { base.Special },
     CmpItemKindKeyword         { base.Special },
     CmpItemKindOperator        { base.Special },
     CmpItemKindFile            { base.Special },
@@ -368,20 +369,21 @@ local extensions = lush(function()
     CmpItemKindSnippet         { base.Typedef },
     CmpItemKindEvent           { base.Typedef },
     CmpItemKindInterface       { base.Keyword },
-    CmpItemKindModule          { base.TSInclude },
-    CmpItemKindReference       { base.TSInclude },
+    CmpItemKindModule          { base.Keyword },
+    CmpItemKindReference       { base.Keyword },
     CmpItemKindFolder          { base.Constant },
     CmpItemKindConstant        { base.Constant },
-    CmpItemKindUnit            { base.Identifier },
+    CmpItemKindUnit            { base.Character },
     CmpItemKindColor           { base.Identifier },
 
+    BlinkCmpMenuSelection       { base.PmenuSel },
     BlinkCmpKindText            { base.Comment },
-    BlinkCmpKindVariable        { base.TSField },
-    BlinkCmpKindField           { base.TSField },
-    BlinkCmpKindProperty        { base.TSField },
+    BlinkCmpKindVariable        { base.Character },
+    BlinkCmpKindField           { base.Field },
+    BlinkCmpKindProperty        { base.Field },
     BlinkCmpKindFunction        { base.Function },
     BlinkCmpKindMethod          { base.Function },
-    BlinkCmpKindConstructor     { base.TSConstBuiltin },
+    BlinkCmpKindConstructor     { base.Special },
     BlinkCmpKindKeyword         { base.Special },
     BlinkCmpKindOperator        { base.Special },
     BlinkCmpKindFile            { base.Special },
@@ -394,11 +396,11 @@ local extensions = lush(function()
     BlinkCmpKindSnippet         { base.Typedef },
     BlinkCmpKindEvent           { base.Typedef },
     BlinkCmpKindInterface       { base.Keyword },
-    BlinkCmpKindModule          { base.TSInclude },
-    BlinkCmpKindReference       { base.TSInclude },
+    BlinkCmpKindModule          { base.Keyword },
+    BlinkCmpKindReference       { base.Keyword },
     BlinkCmpKindFolder          { base.Constant },
     BlinkCmpKindConstant        { base.Constant },
-    BlinkCmpKindUnit            { base.Identifier },
+    BlinkCmpKindUnit            { base.Character },
     BlinkCmpKindColor           { base.Identifier },
 
     javascriptNumber           { base.Number },
