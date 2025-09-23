@@ -193,6 +193,35 @@ local base = lush(function(injected_functions)
     DiagnosticSignInfo            { DiagnosticInfo },
     DiagnosticSignHint            { DiagnosticHint },
 
+    -- LSP
+    sym('@lsp.type.function')      { Function }, -- function
+    sym('@lsp.type.method')        { Function }, -- method
+    sym('@lsp.type.parameter')     { Identifier }, -- parameter
+    sym('@lsp.type.property')      { fg = c.cyan }, -- property
+    sym('@lsp.type.variable')      { Identifier }, -- variable
+    sym('@lsp.type.class')         { Type }, -- class
+    sym('@lsp.type.enum')          { Typedef }, -- enum
+    sym('@lsp.type.interface')     { Type }, -- interface
+    sym('@lsp.type.struct')        { Type }, -- struct
+    sym('@lsp.type.type')          { Type }, -- type
+
+    sym('@lsp.type.enumMember')    { Typedef }, -- enum member
+    sym('@lsp.type.constant')      { Constant }, -- constant
+    sym('@lsp.type.string')        { String }, -- string
+    sym('@lsp.type.number')        { Number }, -- number
+    sym('@lsp.type.boolean')       { Boolean }, -- boolean
+    sym('@lsp.type.null')          { Special }, -- null
+    sym('@lsp.type.builtinType')   { Special }, -- builtin type
+    sym('@lsp.type.keyword')       { Keyword }, -- keyword
+    sym('@lsp.type.comment')       { Comment }, -- comment
+    sym('@lsp.type.operator')      { Operator }, -- operator
+    sym('@lsp.type.namespace')     { Keyword }, -- namespace
+    sym('@lsp.type.module')        { Keyword }, -- module
+
+    -- gopls
+    sym('@lsp.mod.readonly.go')    { Constant }, -- readonly modifier
+    sym('@lsp.typemod.variable.defaultLibrary.go') { Special }, -- default library variable
+
     -- TreeSitter
 
     Field                          { fg = c.cyan },        -- object and struct fields
@@ -306,6 +335,7 @@ end)
 
 local extensions = lush(function()
   return {
+    mkdLineBreak               { base.Normal },
     diffRemoved                { base.DiffDelete },
     diffAdded                  { fg = c.dark_green2 },
     diffNoEOL                  { fg = c.magenta },
@@ -424,6 +454,103 @@ local extensions = lush(function()
     FidgetTask                 { fg = c.dark_green2  },
     TelescopeResultsNumber     { fg = c.olive, bg = c.deep_blue2 },
     NotifyBackground           { bg = c.deep_blue },
+    OctoGreen                  { fg = c.dark_green2 },
+    OctoBubbleGreen            { fg = c.dark_green2, bg = c.grey },
+    OctoGreenFloat             { fg = c.dark_green2, bg = c.deep_blue },
+    OctoBubbleDelimiterGreen   { fg = c.grey },
+    OctoRed                    { fg = c.dark_red },
+    OctoBubbleRed              { fg = c.dark_red, bg = c.grey },
+    OctoRedFloat               { fg = c.dark_red, bg = c.deep_blue },
+    OctoBubbleDelimiterRed     { fg = c.grey },
+    OctoPurple                 { fg = c.dark_purple },
+    OctoBubblePurple           { fg = c.dark_purple, bg = c.grey },
+    OctoPurpleFloat            { fg = c.dark_purple, bg = c.deep_blue },
+    OctoBubbleDelimiterPurple  { fg = c.grey },
+    OctoYellow                 { fg = c.gold },
+    OctoBubbleYellow           { fg = c.gold, bg = c.grey },
+    OctoYellowFloat            { fg = c.gold, bg = c.deep_blue },
+    OctoBubbleDelimiterYellow  { fg = c.grey },
+    OctoGrey                   { fg = c.light_grey },
+    OctoBubbleGrey             { fg = c.light_grey, bg = c.deep_blue2 },
+    OctoGreyFloat              { fg = c.light_grey, bg = c.deep_blue },
+    OctoBubbleDelimiterGrey    { fg = c.light_grey },
+    OctoBlue                   { fg = c.dark_blue },
+    OctoBubbleBlue             { fg = c.dark_blue, bg = c.grey },
+    OctoBlueFloat              { fg = c.dark_blue, bg = c.deep_blue },
+    OctoBubbleDelimiterBlue    { fg = c.grey },
+    OctoNormal                 { base.Normal },
+    OctoCursorLine             { base.CursorLine },
+    OctoWinSeparator           { base.WinSeparator },
+    OctoSignColumn             { base.Normal },
+    OctoStatusColumn           { base.SignColumn },
+    OctoStatusLine             { base.StatusLine },
+    OctoStatusLineNC           { base.StatusLineNC },
+    OctoEndOfBuffer            { base.EndOfBuffer },
+    OctoFilePanelFileName      { base.NormalFloat },
+    OctoFilePanelSelectedFile  { base.Search },
+    OctoFilePanelPath          { base.Comment },
+    OctoStatusAdded            { fg = c.dark_green2 },
+    OctoStatusUntracked        { fg = c.dark_green2 },
+    OctoStatusModified         { fg = c.gold },
+    OctoStatusRenamed          { fg = c.dark_blue },
+    OctoStatusCopied           { fg = c.dark_blue },
+    OctoStatusTypeChange       { fg = c.dark_blue },
+    OctoStatusUnmerged         { fg = c.dark_blue },
+    OctoStatusUnknown          { fg = c.gold },
+    OctoStatusDeleted          { fg = c.dark_red },
+    OctoStatusBroken           { fg = c.dark_red },
+    OctoDirty                  { fg = c.dark_red },
+    OctoIssueId                { base.Normal },
+    OctoIssueTitle             { base.PreProc },
+    OctoFloat                  { base.Normal },
+    OctoTimelineItemHeading    { base.Comment },
+    OctoTimelineMarker         { base.Identifier },
+    OctoSymbol                 { base.Comment },
+    OctoDate                   { base.Comment },
+    OctoDetailsLabel           { base.Title },
+    OctoDetailsValue           { base.Identifier },
+    OctoMissingDetails         { base.Comment },
+    OctoEmpty                  { base.Normal },
+    OctoBubble                 { base.Normal, bg = c.deep_blue2 },
+    OctoUser                   { base.Special },
+    OctoUserViewer             { base.DiagnosticInfo },
+    OctoReaction               { base.Normal },
+    OctoReactionViewer         { base.Special },
+    OctoEditable               { base.Cursor },
+    OctoPassingTest            { fg = c.dark_green2 },
+    OctoFailingTest            { fg = c.dark_red },
+    OctoPullAdditions          { fg = c.dark_green2 },
+    OctoPullDeletions          { fg = c.dark_red },
+    OctoDiffHunkPosition       { base.NormalFloat },
+    OctoDiffStatAdditions      { fg = c.dark_green2 },
+    OctoDiffStatDeletions      { fg = c.dark_red },
+    OctoDiffStatNeutral        { base.Comment },
+    OctoPullModifications      { base.Comment },
+    OctoStateOpen              { fg = c.dark_green2 },
+    OctoStateClosed            { fg = c.dark_red },
+    OctoStateCompleted         { fg = c.dark_purple },
+    OctoStateNotPlanned        { base.Comment },
+    OctoStateDraft             { base.Comment },
+    OctoStateMerge             { fg = c.dark_purple },
+    OctoStatePending           { fg = c.gold },
+    OctoStateApproved          { fg = c.dark_green2 },
+    OctoStateChangesRequested  { fg = c.dark_red },
+    OctoStateDismissed         { fg = c.dark_red },
+    OctoStateCommented         { fg = c.gold },
+    OctoStateSubmitted         { fg = c.dark_green2 },
+    OctoStateOpenBubble        { fg = c.dark_green2, bg = c.deep_blue2 },
+    OctoStateClosedBubble      { fg = c.dark_red, bg = c.deep_blue2 },
+    OctoStateMergedBubble      { fg = c.dark_purple, bg = c.deep_blue2 },
+    OctoStatePendingBubble     { fg = c.gold, bg = c.deep_blue2 },
+    OctoStateApprovedBubble    { fg = c.dark_green2, bg = c.deep_blue2 },
+    OctoStateChangesRequestedBu{ fg = c.dark_red, bg = c.deep_blue2 },
+    OctoStateDismissedBubble   { fg = c.dark_red, bg = c.deep_blue2 },
+    OctoStateCommentedBubble   { fg = c.dark_blue, bg = c.deep_blue2 },
+    OctoStateSubmittedBubble   { fg = c.dark_green2, bg = c.deep_blue2 },
+    OctoStateOpenFloat         { fg = c.dark_green2 },
+    OctoStateClosedFloat       { fg = c.dark_red },
+    OctoStateMergedFloat       { fg = c.dark_purple },
+    OctoStateDraftFloat        { base.Comment },
   }
 end)
 
